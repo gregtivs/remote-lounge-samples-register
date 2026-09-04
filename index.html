@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Remote Lounge Samples Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">Q DESIGN & CONSTRUCT · T3/T4 REMOTE LOUNGE</div>
+    <h1>Samples Register</h1>
+  </div>
+  <div class="top-actions">
+    <button id="exportBtn" class="secondary">Export filtered CSV</button>
+  </div>
+</header>
+
+<main>
+  <section class="stats" id="stats"></section>
+
+  <section class="panel controls">
+    <input id="search" type="search" placeholder="Search sample, package, clause, document…">
+    <select id="discipline"><option value="">All disciplines</option></select>
+    <select id="package"><option value="">All packages</option></select>
+    <select id="status">
+      <option value="">All statuses</option>
+      <option>Not Started</option>
+      <option>Requested from Subcontractor</option>
+      <option>Received / Internal Review</option>
+      <option>Submitted to PAPL</option>
+      <option>Comments Received</option>
+      <option>Revise & Resubmit</option>
+      <option>Approved</option>
+      <option>Approved with Comments</option>
+      <option>Not Required</option>
+    </select>
+    <select id="priority"><option value="">All priorities</option><option>Critical</option><option>High</option><option>Normal</option><option>Low</option></select>
+  </section>
+
+  <section class="panel">
+    <div class="table-head">
+      <strong id="resultCount">Samples</strong>
+      <span class="hint">Click a sample to open its full requirement and photo area.</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>ID</th><th>Sample</th><th>Package</th><th>Discipline</th><th>Priority</th><th>Status</th><th>Subcontractor</th><th>Photo</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<dialog id="sampleDialog">
+  <div class="dialog-head">
+    <div><div id="modalId" class="eyebrow"></div><h2 id="modalTitle"></h2></div>
+    <button id="closeDialog" class="icon-btn" aria-label="Close">×</button>
+  </div>
+  <div id="modalBody"></div>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>
